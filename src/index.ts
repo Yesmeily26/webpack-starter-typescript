@@ -26,8 +26,21 @@ const usuariosRef = db.collection('usuarios');
 //  activo: true,  
 //   edad:17,
 // });
-usuariosRef 
-.doc('8Yuve3P1Z6AjXEUb6nLW')
-.delete()
-.then( () => console.log('borrado') )
-.catch( e => console.log('error', e));
+// usuariosRef 
+// .doc('8Yuve3P1Z6AjXEUb6nLW')
+// .delete()
+// .then( () => console.log('borrado') )
+// .catch( e => console.log('error', e));
+
+usuariosRef
+.onSnapshot( snap => {
+
+    const usuarios: any[] = [];
+    snap.forEach( snapHijo => {
+        usuarios.push({
+            id: snapHijo.id,
+            ...snapHijo.data() 
+    });
+})
+console.log(usuarios)
+})
