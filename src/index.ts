@@ -35,4 +35,15 @@ const usuariosRef = db.collection('usuarios');
 // usuariosRef
 // .onSnapshot(retornaDocumentos)
    
-usuariosRef.get().then( retornaDocumentos );
+// usuariosRef.get().then( retornaDocumentos );
+
+// usuariosRef.where('salario', '>', 1800 )
+// .get().then( retornaDocumentos );
+
+// usuariosRef.where('salario', '>=', 1800 )
+// .where('salario', '<=', 2300)
+// .get().then( retornaDocumentos);
+
+// usuariosRef.where('salario', '>=', 1800 )
+// .where('activo', '==', true )
+// .get().then( retornaDocumentos);
